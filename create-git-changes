@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -e
+
+echo ';;;; A new staged file
+(fact (+ 6 35)
+  => 42)'     > ~/development-100/repositories/nomis/_play-play_play/nomis-random-playing-clojure-repo/test/nomis_random_playing_clojure_repo/a-new-staged-file.NOT-CLJ
+
+echo ';;;; A new staged file
+(fact (+ 6 35)
+  => 42)'     > ~/development-100/repositories/nomis/_play-play_play/nomis-random-playing-clojure-repo/test/nomis_random_playing_clojure_repo/a-new-staged-file.clj
+
+echo ';;;; Staged changes
+(fact (+ 6 35)
+  => 42)'  >> ~/development-100/repositories/nomis/_play-play_play/nomis-random-playing-clojure-repo/test/nomis_random_playing_clojure_repo/core_test.clj
+
+git add .
+
+echo ';;;; A new unstaged file
+(fact (+ 6 35)
+  => 42) ; a new unstaged file'   > ~/development-100/repositories/nomis/_play-play_play/nomis-random-playing-clojure-repo/test/nomis_random_playing_clojure_repo/a-new-unstaged-file.clj
+
+echo ';;;; Unstaged changes
+(fact (+ 6 35)
+  => 42)' >> ~/development-100/repositories/nomis/_play-play_play/nomis-random-playing-clojure-repo/test/nomis_random_playing_clojure_repo/core_test.clj
